@@ -12,14 +12,12 @@ const faqData =[
     </br></br>
       <p>The deposit exchange rate is determined at the beginning of the deposit window utilizing the formula:       </p>
       </br>
-      The deposit exchange rate is determined at the beginning of the deposit window. For the first deposit period, the exchange rate of ALGO to OPT will be set to 1:1. For subsequent deposit windows, the exchange rate will be determined by the formula:</br>
-      </br>
    `
   },
   {
       id:2,
       question:"Are withdrawals limited in the same way as deposits?",
-      answer:`“Optimum is a non-custodial protocol, which means the original user retains complete control of their
+      answer:`Optimum is a non-custodial protocol, which means the original user retains complete control of their
       funds. We recognize the importance of liquidity and have made careful design choices to enable
       withdrawals at any time. The exchange rate for withdrawals uses the same formula used for deposits
       but is recalculated at the time of each transaction.</br>
@@ -32,7 +30,7 @@ governance commitments.
       </br>
       With this approach, you are fee to withdraw whatever increment you deem necessary without forfeiting
       the staking power of your remaining balance. If a user holding 1,000 OPT exchanges 100 OPT, the
-      remaining 900 OPT retains its value in the staking pool and remains qualified for the prize game.”`
+      remaining 900 OPT retains its value in the staking pool and remains qualified for the prize game.`
   },
   {
       id:3,
