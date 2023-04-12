@@ -19,7 +19,8 @@ import { changeWallet, updateAddress } from '../../redux/wallet/actions';
 const CurrentAccountComp = (props) => {
   const [drawerState, setDrawerState] = React.useState(true);
   const [toast, setToast] = React.useState(false);
-
+  const handleCloseModal = () => props.closeModal(false);
+  console.log(props)
   React.useEffect(() => {
       props.closeModal(drawerState);
       // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -51,7 +52,7 @@ const CurrentAccountComp = (props) => {
     <div className='pt-[26.95px] md:pt-[2.10546875vw] text-center '>
         <h4 className='text-[20px] leading-[24px] md:leading-[1.875vw] md:text-[1.5625vw] text-[#FFFFFF] colus'>Current Account</h4>
     </div>
-    <div className='flex flex-col gap-y-[16px] md:gap-y-[1.25vw]  md:pb-[2.50390625vw] pb-[32.05px]'>
+    <div className='flex z_index flex-col gap-y-[16px] md:gap-y-[1.25vw]  md:pb-[2.50390625vw] pb-[32.05px]'>
     <div  onClick={() => {
                         navigator.clipboard.writeText(
                             props.address
@@ -75,7 +76,10 @@ const CurrentAccountComp = (props) => {
     </div>
     
    </div>
+   
+   <div onClick={handleCloseModal}>
     <PopUpCloser />
+   </div>
    </div>
       
     </div>

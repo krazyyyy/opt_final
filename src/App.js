@@ -35,7 +35,7 @@ const FooterContainer = ({ children }) => {
     );
 };
 function App(props) {
-    console.log(props)
+    
     const [isAdminLogged, setAdminLog] = React.useState(props.is_admin_logged);
     const [showWalletModal, setShowWalletModal] = React.useState(false);
     const [showCurrentModal, setShowCurrentModal] = React.useState(false);
@@ -163,7 +163,7 @@ function App(props) {
             <LoginModal props={props} setShowWalletModal={setShowWalletModal} />
             )}
             {showCurrentModal && (
-                <CurrentAccountComp props={props} closeModal={(state) => setShowCurrentModal(state)}/>
+                <CurrentAccountComp props={props} closeModal={setShowCurrentModal}/>
             )}
         </div>
     );

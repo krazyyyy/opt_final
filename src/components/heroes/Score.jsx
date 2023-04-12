@@ -16,7 +16,6 @@ const Score = () => {
     <div className=' w-[79.93%] mx-[auto] md:w-[35vw] top-[29.6875vw] pt-[40px] md:pt-[unset]  md:right-[10.390625vw] md:absolute gap-y-[16px] text-center flex flex-col items-center md:gap-y-[1.25vw]'>
         <HomeHeading title={"What is the prize amount?"} />
         <HomePara classes={" text-[#ADADAD]  "} title={"The prize pool will be determined at the beginning of every week of a Governance quarter (13 weeks total). This will be determined by evaluating the current Governance period APR, which will be obtained from data posted on the Algorand Foundation Governance website."}/>
-        <button className='text-[#EDDB0F] text-[18px] md:text-[1.40625vw] font-[700]'>Learn More</button>
     </div>
     <div className='mt-[68.7px] md:mt-[unset]'>
         <img src={historicalGovernanceFrame} alt="historicalGovernanceFrame" className='w-[59.84375vw] md:block hidden' />

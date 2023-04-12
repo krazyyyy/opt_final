@@ -196,7 +196,7 @@ const Home = (props) => {
 
             </Paragraph>
            
-            <Link className='text-[#EDDB0F] md:leading-[1.6875vw] font-[700] text-[18px] leading-[22px] mt-[10px] inline-block md:text-[0.9375vw]'>
+            <Link to="/About" className='text-[#EDDB0F] md:leading-[1.6875vw] font-[700] text-[18px] leading-[22px] mt-[10px] inline-block md:text-[0.9375vw]'>
             Learn More
             </Link>
             

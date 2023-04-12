@@ -12,7 +12,6 @@ const Table = () => {
                 <HomePara classes={"z-50 text-[#ADADAD]  "} title={"The following table illustrates our mechanism with an example of five wallets participating with ascending OPT balances of 10, 20, 30, 40, and 50:"}/>
                 
 
-                <button className='text-[#EDDB0F] text-[18px] md:text-[1.40625vw] font-[700]'>Learn More</button>
     </div>
     <div className='mt-[60.78px] md:mt-[0px] md:left-[50.9375vw] relative'>
         <div className="tableEllpse"></div>

@@ -28,6 +28,7 @@ import { readAppGlobalState, localOPTBalances, getAssetHolding, OptAppID, OptAsa
 
 const Home_Logged = (props) => {
     const [showFormModal, setShowFormModal] = useState(false);
+    
     const [formType, setFormType] = useState('');
     const [isAdminLogged, setAdminLog] = useState(props.is_admin_logged);
     const navigate = useNavigate();
@@ -99,7 +100,6 @@ const Home_Logged = (props) => {
     const openForm = (type) => {
         
         if (props.address) {
-            props.showFunc()
             setShowFormModal(true);
             setFormType(type);
         } else {
