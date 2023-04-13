@@ -73,10 +73,11 @@ function Admin(props) {
     const [governanceAddrError, setGovernanceAddrError] = useState('');
 
     const [globalState, setGlobalState] = useState(undefined);
-
+    // props.selected_network = "mainnet"
+    // props.address = "726KLAKOQEQLWTQCJFBSP4JWJWASQ7T5OX6ABRKAY6GMBAA4GFSYBO6QGM"
     const [loading, setLoading] = useState(false);
     const [sendVrf, setSendVrf] = useState(true);
-
+    console.log(props)
     const [governance, setGovernance] = useState(0);
     const [updateCustodialWalletsData, setCustodialWalletData] =
         useState(false); // update state in admin component to call fetch fn in custodial wallet component

@@ -81,7 +81,7 @@ function App(props) {
                     <Route
                         path="/"
                         element={
-                            <Layout props={props} setShowWalletModal={setShowWalletModal} setShowCurrentModal={setShowCurrentModal} showFunc={activateLoginModal} >
+                            <Layout props={props} setShowWalletModal={setShowWalletModal} setShowCurrentModal={setShowCurrentModal} showFunc={activateLoginModal} isAdminLogged={isAdminLogged}>
                             {!props.selected && (
                             <Home props={props} setShowWalletModal={setShowWalletModal} showFunc={activateLoginModal}/>
                             )}
@@ -95,7 +95,7 @@ function App(props) {
                     <Route
                     path="/About"
                     element={
-                    <Layout props={props} setShowWalletModal={setShowWalletModal} setShowCurrentModal={setShowCurrentModal} showFunc={activateLoginModal}>
+                    <Layout props={props} setShowWalletModal={setShowWalletModal} setShowCurrentModal={setShowCurrentModal} showFunc={activateLoginModal} isAdminLogged={isAdminLogged}>
                         <About props={props} setShowWalletModal={setShowWalletModal} showFunc={activateLoginModal} />
                     </Layout>
                     }
@@ -103,7 +103,7 @@ function App(props) {
                  <Route
             path="/new-page-2"
             element={
-              <Layout props={props} setShowWalletModal={setShowWalletModal} setShowCurrentModal={setShowCurrentModal}>
+              <Layout props={props} setShowWalletModal={setShowWalletModal} setShowCurrentModal={setShowCurrentModal} showFunc={activateLoginModal} isAdminLogged={isAdminLogged}>
                 <NewPage2 props={props} setShowWalletModal={setShowWalletModal} />
               </Layout>
             }
@@ -112,7 +112,7 @@ function App(props) {
                <Route
             path="/privacy"
             element={
-              <Layout props={props} setShowWalletModal={setShowWalletModal} setShowCurrentModal={setShowCurrentModal}>
+              <Layout props={props} setShowWalletModal={setShowWalletModal} setShowCurrentModal={setShowCurrentModal} showFunc={activateLoginModal} isAdminLogged={isAdminLogged}>
                 <PrivacyPolicy />
               </Layout>
             }
@@ -120,7 +120,7 @@ function App(props) {
           <Route
             path="/toc"
             element={
-              <Layout props={props} setShowWalletModal={setShowWalletModal} setShowCurrentModal={setShowCurrentModal}>
+              <Layout props={props} setShowWalletModal={setShowWalletModal} setShowCurrentModal={setShowCurrentModal} showFunc={activateLoginModal} isAdminLogged={isAdminLogged}>
                 <TermsCondition />
               </Layout>
             }
@@ -128,11 +128,11 @@ function App(props) {
            <Route
                   path="/admin"
                   element={
-                      <PrivateRoute admin={isAdminLogged}>
+                    //   <PrivateRoute admin={isAdminLogged}>
                           <FooterContainer>
                               <Admin />
                           </FooterContainer>
-                      </PrivateRoute>
+                    //   </PrivateRoute>
                   }
               />
            {/* <Route

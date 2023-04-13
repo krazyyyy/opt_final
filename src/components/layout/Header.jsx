@@ -10,6 +10,7 @@ import { connect } from 'react-redux';
 import { Button } from '@mui/material';
 
 const Header = (props) => {
+    
     const handleWalletModal = (event) => {
         event.preventDefault();
         props.setShowWalletModal(true);
@@ -30,7 +31,7 @@ const Header = (props) => {
                 About
             </Link>
         </li>
-        {props.is_admin_logged && 
+        {props.isAdminLogged && 
             <li>
                 <Link to={"/admin"}>
                     Admin

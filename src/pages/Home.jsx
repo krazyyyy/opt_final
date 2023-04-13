@@ -187,7 +187,7 @@ const Home = (props) => {
         />
 )}
         <ServicesHero isMob={isMob} bannerImg={isMob ? mobBannerImg: bannerImg}/>
-        <div className="content absolute  flex flex-col    w-full  md:w-[unset] text-white h-full md:h-[unset]  md:left-[13.046875vw] md:top-[22.25vh] text-center z-[10]">
+        <div className="content absolute  flex flex-col    w-full  md:w-[unset] text-white h-full md:h-[95px]  md:left-[13.046875vw] md:top-[22.25vh] text-center z-[10]">
             <Tagline title={"WELCOME TO"} classes={"pt-[30.7692307692vw] md:pt-0 "}/>
             <Heading title={"Optimum"}/>
             <SubHeading title="NEW ERA OF STAKING"/>
@@ -199,8 +199,13 @@ const Home = (props) => {
             <Link to="/About" className='text-[#EDDB0F] md:leading-[1.6875vw] font-[700] text-[18px] leading-[22px] mt-[10px] inline-block md:text-[0.9375vw]'>
             Learn More
             </Link>
-            
-          <BtnGroups props={props} isDepositValid={isDepositValid} ButtonTypes_DEPOSIT={ButtonTypes.DEPOSIT} ButtonTypes_WITHDRAW={ButtonTypes.WITHDRAW} openForm={openForm} classes={"mt-auto mx-auto md:mt-[2.34375vw] mb-[115px] md:mb-0"}/>
+            <div className='flex flex-col items-center gap-y-[4px] mt-[32px] z-[5] relative'>
+                <span className='colus text-[20px] leading-[24px] md:text-[0.8625vw] md:leading-[1.875vw] text-[#EDDB0F]'>Next drawing</span>
+                <span className='colus text-[20px] leading-[24px] md:text-[1.34375vw] md:leading-[2.890625vw] text-[#FFFFFF]'>{} Days : {} hours</span>
+                <span className='colus text-[20px] leading-[24px] md:text-[0.728125vw] md:leading-[1.5625vw] text-[#FFFFFF] mt-[3px]'>{} min : {} sec</span>
+                </div>
+
+          <BtnGroups props={props} isDepositValid={isDepositValid} ButtonTypes_DEPOSIT={ButtonTypes.DEPOSIT} ButtonTypes_WITHDRAW={ButtonTypes.WITHDRAW} openForm={openForm} classes={"mt-auto mx-auto md:mt-[0.34375vw] mb-[115px] md:mb-0"}/>
             
         </div>
         {isMob || <div className='absolute top-[13.59375vw] right-0'>
