@@ -75,52 +75,52 @@ async function _closeCustodialWallets(
         await tryExecuteTx(web, grp);
     }
 
-    const client = algodClient(network);
+    // const client = algodClient(network);
 
-    // 2. clear wallet state (clear tx appl call)
-    const clearTxArray = [];
-    for (let i = 0; i < custodialWallets.length; i++) {
-        const suggestedParams = await client.getTransactionParams().do();
-        suggestedParams.flatFee = true;
-        suggestedParams.fee = 1000;
+    // // 2. clear wallet state (clear tx appl call)
+    // const clearTxArray = [];
+    // for (let i = 0; i < custodialWallets.length; i++) {
+    //     const suggestedParams = await client.getTransactionParams().do();
+    //     suggestedParams.flatFee = true;
+    //     suggestedParams.fee = 1000;
 
-        // in each iteration we're withdrawing rewards from 4 wallets
-        clearTxArray.push(
-            algosdk.makeApplicationClearStateTxnFromObject({
-                from: custodialWallets[i],
-                suggestedParams: suggestedParams,
-                appIndex: OptAppID(network)
-            })
-        );
-    }
+    //     // in each iteration we're withdrawing rewards from 4 wallets
+    //     clearTxArray.push(
+    //         algosdk.makeApplicationClearStateTxnFromObject({
+    //             from: custodialWallets[i],
+    //             suggestedParams: suggestedParams,
+    //             appIndex: OptAppID(network)
+    //         })
+    //     );
+    // }
 
-    const clearTxGroups = chunkArray(clearTxArray, 16);
-    for (const grp of clearTxGroups) {
-        await executeRekeyedTx(web, grp, adminAddr, selectedWalletType);
-    }
+    // const clearTxGroups = chunkArray(clearTxArray, 16);
+    // for (const grp of clearTxGroups) {
+    //     await executeRekeyedTx(web, grp, adminAddr, selectedWalletType);
+    // }
 
-    // 3. close the wallet
-    const closeTxnArray = [];
-    for (let i = 0; i < custodialWallets.length; i++) {
-        const suggestedParams = await client.getTransactionParams().do();
-        suggestedParams.flatFee = true;
-        suggestedParams.fee = 1000;
+    // // 3. close the wallet
+    // const closeTxnArray = [];
+    // for (let i = 0; i < custodialWallets.length; i++) {
+    //     const suggestedParams = await client.getTransactionParams().do();
+    //     suggestedParams.flatFee = true;
+    //     suggestedParams.fee = 1000;
 
-        closeTxnArray.push(
-            algosdk.makePaymentTxnWithSuggestedParamsFromObject({
-                from: custodialWallets[i],
-                suggestedParams: suggestedParams,
-                closeRemainderTo: adminAddr,
-                amount: 0,
-                to: custodialWallets[i]
-            })
-        );
-    }
+    //     closeTxnArray.push(
+    //         algosdk.makePaymentTxnWithSuggestedParamsFromObject({
+    //             from: custodialWallets[i],
+    //             suggestedParams: suggestedParams,
+    //             closeRemainderTo: adminAddr,
+    //             amount: 0,
+    //             to: custodialWallets[i]
+    //         })
+    //     );
+    // }
 
-    const closeTxGroups = chunkArray(closeTxnArray, 16);
-    for (const grp of closeTxGroups) {
-        await executeRekeyedTx(web, grp, adminAddr, selectedWalletType);
-    }
+    // const closeTxGroups = chunkArray(closeTxnArray, 16);
+    // for (const grp of closeTxGroups) {
+    //     await executeRekeyedTx(web, grp, adminAddr, selectedWalletType);
+    // }
 }
 
 /**

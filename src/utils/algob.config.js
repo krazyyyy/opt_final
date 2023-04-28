@@ -15,13 +15,13 @@ function getNetworkAlgodConfig(networkType) {
     switch (networkType) {
         case NetworkArray[0]:
             return {
-                token: '',
+                token: 'ksZOvoviIZ163QVUoTht86g0qMBmLJIS9hcFpcNl',
                 server: AlgoNodeAlgodURL.MAIN_NET_URL,
                 port: ''
             };
         case NetworkArray[1]:
             return {
-                token: '',
+                token: 'ksZOvoviIZ163QVUoTht86g0qMBmLJIS9hcFpcNl',
                 server: AlgoNodeAlgodURL.TEST_NET_URL,
                 port: ''
             };
@@ -50,13 +50,13 @@ function getNetworkIndexerConfig(networkType) {
     switch (networkType) {
         case NetworkArray[0]:
             return {
-                token: '',
+                token: 'ksZOvoviIZ163QVUoTht86g0qMBmLJIS9hcFpcNl',
                 server: AlgoNodeIndexerURL.MAIN_NET_URL,
                 port: ''
             };
         case NetworkArray[1]:
             return {
-                token: '',
+                token: 'ksZOvoviIZ163QVUoTht86g0qMBmLJIS9hcFpcNl',
                 port: '',
                 server: AlgoNodeIndexerURL.TEST_NET_URL
             };

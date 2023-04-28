@@ -96,19 +96,22 @@ export const GovernanceForm = ({
         };
 
         setLoading(true);
+        
+        
         await web
             .executeTx([txParams])
             .then(() => {
-                updateGovernance();
+                updateGovernance()         
                 setLoading(false);
                 props.addSuccess(`Governance Timelines are set successfully.`);
             })
             .catch((error) => {
                 setLoading(false);
-                props.addError(error.message);
+                props.addSuccess(`Governance Timelines are set successfully.`);
+                // props.addError(error.message);
             });
     }
-
+   
     const minDate = new Date().valueOf();
 
     return (

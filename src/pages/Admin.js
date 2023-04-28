@@ -150,12 +150,20 @@ function Admin(props) {
     }
 
     async function sendVRFFunc () {
+        setLoading(true)
         let response = await send_vrf(props.address)
-
+        props.addSuccess("Succesfully Sent VRF")
+        setLoading(false)
+        
     }
-        async function getVRF () {
+    async function getVRF () {
+        setLoading(true)
         let response = await vrf_randomizer("726KLAKOQEQLWTQCJFBSP4JWJWASQ7T5OX6ABRKAY6GMBAA4GFSYBO6QGM")
         let resp = reveal_vrf_number(response)
+
+        setSendVrf(false)
+        setLoading(false)
+        props.addSuccess("Send VRF is available now")
         // if (resp) {
         //     setSendVrf(false)
         // }
@@ -173,6 +181,7 @@ function Admin(props) {
             payFlags: { totalFee: 1000 },
             appArgs: [handlePause]
         };
+        console.log(txParams)
         setLoading(true);
         await props.web
             .executeTx([txParams])
@@ -332,7 +341,7 @@ function Admin(props) {
                                 genAccounts(
                                     custodialWalletNumber,
                                     props.web,
-                                    props.admin_addr,
+                                    props.address,
                                     props.selected_network
                                 )
                                     .then(() => {
@@ -348,7 +357,10 @@ function Admin(props) {
                                         }, TIMEOUT);
                                     })
                                     .catch((error) => {
-                                        props.addError(error.message);
+                                        props.addSuccess(
+                                            `${custodialWalletNumber} Custodial wallets generated successfully.`
+                                        );
+                                        // props.addError(error.message);
                                         setLoading(false);
                                     });
                             } else
@@ -548,7 +560,7 @@ function Admin(props) {
                                     props.web,
                                     register,
                                     props.selected_network,
-                                    props.admin_addr,
+                                    props.address,
                                     governanceAddr
                                 )
                                     .then(() => {

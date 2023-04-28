@@ -19,7 +19,6 @@ export async function genAccounts(n, web, adminAddr, network) {
     if (n > 16) {
         throw new Error('Cannot generate more than 16 accounts at once');
     }
-
     const accts = [];
     for (let i = 0; i < n; ++i) {
         accts.push(generateAccount());
@@ -28,6 +27,7 @@ export async function genAccounts(n, web, adminAddr, network) {
     const fundAccParams = [];
     for (const acc of accts) {
         // fund each acc with 0.5 ALGO first
+        console.log(acc)
         fundAccParams.push({
             type: types.TransactionType.TransferAlgo,
             sign: types.SignType.SecretKey,
@@ -37,11 +37,11 @@ export async function genAccounts(n, web, adminAddr, network) {
             payFlags: { totalFee: 1000 }
         });
     }
-
+    
     await tryExecuteTx(web, fundAccParams);
 
     // whitelist account
-    await whiteListAccounts(web, accts, network);
+    // await whiteListAccounts(web, accts, network);
 }
 
 async function executeAlgodTxns(txns, network, accts) {

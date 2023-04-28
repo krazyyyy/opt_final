@@ -28,7 +28,6 @@ export async function registerByCustodialWallets(
         adminAddr,
         200
     );
-
     // split whole custodial wallets array into chunks of 3
     // as max 4 accounts can be passed in a tx group and we need
     // the last one as the governance address
@@ -52,7 +51,6 @@ export async function registerByCustodialWallets(
             ]
         });
     }
-
     // finally assemble transactions into groups of 16. Submit each group to network
     const txGroups = chunkArray(txArray, 16);
     for (const grp of txGroups) {

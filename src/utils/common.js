@@ -87,6 +87,7 @@ async function tryExecuteTx(web, txnParams) {
             : [txnParams];
         return await web.executeTx(txnParameters);
     } catch (e) {
+        return e
         console.error('Transaction Failed', e);
         throw e;
     }

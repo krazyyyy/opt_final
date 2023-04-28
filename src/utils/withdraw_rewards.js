@@ -82,7 +82,18 @@ async function withdrawRewardsFromCustodialWallets(
     // the "next" query. Maybe is this only because of dev mode
     const txGroups = chunkArray(txArray, 16);
     for (const grp of txGroups) {
-        await tryExecuteTx(web, grp);
+      const params = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            adminAddr,
+          amtsToWithdraw,
+          custodial_wallets: grp.map(tx => tx.accounts)
+        })
+      };
+      const response = await fetch('http://127.0.0.1:5000/blockchain/withdraw_rewards/withdraw_rewards_from_custodial_wallets', params);
+      const result = await response.text();
+      return (result);
     }
 }
 
@@ -103,3 +114,4 @@ export async function withdrawRewards(web, network, adminAddr) {
         network
     );
 }
+
