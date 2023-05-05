@@ -48,7 +48,7 @@ const Hero = ({props}) => {
 )}
   return (
     <section className='bg-[#11031A] relative min-h-[110vh] overflow-hidden md:pb-[13.3125vw]'>
-        <img src={bg} alt="Background Image" className='w-full h-full object-cover top-[93.25px] md:top-[104px] absolute md:left-[41.57px]
+        <img src={bg} alt="Background Image" className='w-full h-full object-cover top-[93.25px] pb-[104px] md:top-[104px] absolute md:left-[41.57px]
          hidden md:block' />
         <img src={mobbg} alt="Background Image" className='w-full object-cover top-[93.25px] h-[706.52px] relative md:left-0 md:hidden block' />
        
