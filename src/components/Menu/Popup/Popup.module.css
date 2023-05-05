@@ -1,0 +1,109 @@
+.popupWrapper {
+    z-index: 1000;
+    
+}
+
+.popupMainContainer {
+    border-radius: 24px;
+    background: #2F193D;
+    box-shadow: 0px 53px 55px rgba(0, 0, 0, 0.56);
+    width: 288px;
+    height: 303px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.popupList {
+    color: #FFFFFF;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    margin-bottom: 40px;
+    cursor: pointer;
+}
+
+.popupListSpan {
+    background: #EDDB0F;
+    width: 192px;
+    height: 48.84px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: skew(-14deg);
+    cursor: pointer;
+}
+
+.closeIconContainer {
+    margin-top: 36px;
+    display: flex;
+    cursor: pointer;
+    justify-content: center;
+}
+
+.popupListText {
+    color: #11031A;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 17.7617px;
+    transform: skew(14deg);
+}
+
+.popupTermsTextWrapper {
+    margin-bottom: 4rem;
+    height: 415px;
+    overflow-y: auto;
+    padding-right: 16px;
+}
+
+.popupTermsText {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    color: #232323;
+}
+
+.popupTermsButtonWrapper {
+    position: absolute;
+    bottom: 16px;
+    text-align: center;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.popupTermsButtonDisabled {
+    height: 40px;
+    background: rgba(0, 186, 239, 0.4);
+    box-shadow: 0px 2px 4px rgba(164, 52, 203, 0.08), inset -1px -1px 4px rgba(164, 52, 203, 0.08), inset -2px -2px 6px rgba(164, 52, 203, 0.12);
+    border-radius: 12px;
+    display: flex;
+    width: 252px;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 13px;
+    color: #FFFFFF;
+}
+
+.popupTermsButtonEnabled {
+    height: 40px;
+    display: flex;
+    width: 252px;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 13px;
+    color: #FFFFFF;
+    background: #00BAEF;    
+    box-shadow: 0px 2px 4px rgba(164, 52, 203, 0.08), inset -1px -1px 4px rgba(164, 52, 203, 0.08), inset -2px -2px 6px rgba(164, 52, 203, 0.12);
+    border-radius: 12px;
+    cursor: pointer;
+}

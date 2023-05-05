@@ -1,15 +1,18 @@
 
-import React from 'react'
+import React,  { useState } from 'react'
 import { Link } from 'react-router-dom'
 import logo from '../../assets/images/Logo.svg'
 import { truncateString } from '../../constants/functions';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { ImageSrc, Routes } from '../../constants/constants';
 import { connect } from 'react-redux';
+import Modal from '../Menu/Modal/Modal';
 
 import { Button } from '@mui/material';
 
 const Header = (props) => {
+
+    const [isMenu, setIsMenu] = useState(false);
     
     const handleWalletModal = (event) => {
         event.preventDefault();
@@ -57,12 +60,16 @@ const Header = (props) => {
         ? truncateString(props.address, 10)
         : 'Connect Wallet'}
     </Link>
-        <button className='md:hidden w-[64px] h-[50px] bg-[#EDDB0F] flex flex-col justify-center items-center gap-y-[4.3px] clipPathButtonMob'>
+        <button className='md:hidden w-[64px] h-[50px] bg-[#EDDB0F] flex flex-col justify-center items-center gap-y-[4.3px] clipPathButtonMob' onClick={() => setIsMenu(true) }>
             <div className='h-[3px] w-[27.75px] bg-[#14041B] ml-[5.06px] block'></div>
             <div className='h-[3px] w-[27.75px] bg-[#14041B] ml-[2.53px] block'></div>
             <div className='h-[3px] w-[27.75px] bg-[#14041B] block'></div>
         </button>
     </div> 
+    {
+        isMenu && 
+        <Modal update={setIsMenu} address={props.address} handleCurrentModal={handleCurrentModal} handleWalletModal={handleWalletModal}  />
+    }
 </header>
   )
 }

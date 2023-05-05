@@ -181,7 +181,6 @@ function Admin(props) {
             payFlags: { totalFee: 1000 },
             appArgs: [handlePause]
         };
-        console.log(txParams)
         setLoading(true);
         await props.web
             .executeTx([txParams])
@@ -192,7 +191,11 @@ function Admin(props) {
                     } successfully.`
                 );
             })
-            .catch((error) => props.addError(error.message));
+            .catch((error) =>{ props.addSuccess(
+                `Cannot change status right now for ${
+                    status ? 'paused' : 'unpaused'
+                } .`
+            );});
         await getContractStatus();
         setLoading(false);
     }
